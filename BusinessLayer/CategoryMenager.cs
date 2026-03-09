@@ -1,0 +1,33 @@
+﻿using DataAccesLayer.Concrete.Repositories;
+using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessLayer
+{
+    public class CategoryMenager
+    {
+        GenericRepository<Category> repo = new GenericRepository<Category>();
+
+        public List<Category> GetAllDL()
+        {
+            return repo.List();
+        }
+
+        private void CategoryAddBL(Category p)
+        {
+            if (p.CategoryName == "" || p.CategoryDescription == "" || p.CategoryName.Length <= 3 || p.CategoryName.Length >= 51)
+            {
+                //hata mesajı
+            }
+            else
+            {
+                repo.Insert(p);
+            }
+        }
+
+    }
+}
