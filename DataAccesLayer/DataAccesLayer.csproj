@@ -63,6 +63,10 @@
     <Compile Include="Concrete\Repositories\CategoryRepositry.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\WriterRepository.cs" />
+    <Compile Include="Migrations\202603112115000_tryFix.cs" />
+    <Compile Include="Migrations\202603112115000_tryFix.Designer.cs">
+      <DependentUpon>202603112115000_tryFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,7 +80,11 @@
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202603112115000_tryFix.resx">
+      <DependentUpon>202603112115000_tryFix.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

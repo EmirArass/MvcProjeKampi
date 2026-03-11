@@ -13,9 +13,10 @@ namespace DataAccesLayer.Concrete.Repositories
     {
         Context c = new Context();
         DbSet<T> _object;
-        public GenericRepository() 
+
+        public GenericRepository()
         {
-            _object = c.Set<T>();
+            _object = c.Set<T>();   
         }
         public void Delete(T p)
         {
