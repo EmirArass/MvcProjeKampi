@@ -17,7 +17,7 @@ namespace BusinessLayer
             return repo.List();
         }
 
-        private void CategoryAddBL(Category p)
+        public void CategoryAddBL(Category p)
         {
             if (p.CategoryName == "" || p.CategoryDescription == "" || p.CategoryName.Length <= 3 || p.CategoryName.Length >= 51)
             {
