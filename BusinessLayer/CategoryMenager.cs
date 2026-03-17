@@ -15,6 +15,13 @@ namespace BusinessLayer
 
         ICategoryDal _categorydal;
 
+        public CategoryMenager(ICategoryDal categorydal)
+        {
+            _categorydal = categorydal;
+        }
+
+
+
 
         //GenericRepository<Category> repo = new GenericRepository<Category>();
 
@@ -36,7 +43,7 @@ namespace BusinessLayer
         //}
         public List<Category> GetList()
         {
-            return 
+            return _categorydal.List();
         }
     }
 }
